@@ -5,6 +5,7 @@
       "allowBranch": "master"
     },
     "publish": {
+      "access": "public",
       "verifyAccess": false,
       "registry": "https://registry.npmjs.org/"
     }
