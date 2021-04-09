@@ -1,5 +1,5 @@
 /**
- * title:图标
+ * title: 图标
  * desc: 有图标的标签。
  */
 import React from 'react';
