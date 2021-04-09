@@ -1,7 +1,7 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "0.0.5",
-  "description": "React Hooks for fetching, caching and updating asynchronous data",
+  "version": "0.0.7",
+  "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
