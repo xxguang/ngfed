@@ -1,5 +1,5 @@
 {
-  "name": "@ngfed/fc-components-test",
+  "name": "@ngfed/fc-components",
   "version": "1.0.1",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
@@ -22,7 +22,8 @@
     "url": "git+https://github.com/tangyongzhan/ngfed.git"
   },
   "scripts": {
-    "build": "gulp && webpack-cli"
+    "build": "gulp && webpack-cli",
+    "test": "echo echo fc-components"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.com/"
