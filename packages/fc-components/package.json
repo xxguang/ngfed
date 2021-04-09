@@ -1,6 +1,6 @@
 {
-  "name": "ngfed",
-  "version": "1.0.9",
+  "name": "@ngfed/test-components",
+  "version": "1.0.8",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
