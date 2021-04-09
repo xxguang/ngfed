@@ -1,6 +1,5 @@
 {
   "name": "ngfed",
-  "version": "0.0.1",
   "private": true,
   "repository": {
     "type": "git",
@@ -54,7 +53,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-fetch-mock": "^3.0.3",
-    "lerna": "^2.11.0",
+    "lerna": "^3.0.0",
     "mockdate": "^3.0.2",
     "mockjs": "^1.1.0",
     "prettier": "^2.0.5",
