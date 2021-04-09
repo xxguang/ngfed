@@ -1,12 +1,16 @@
 {
-  "name": "@ngfed/fc-components",
-  "version": "0.0.1",
+  "name": "@ngfed/fc-components-test",
+  "version": "1.0.1",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
   "unpkg": "dist/ngfed-fc-components.js",
   "author": "tangyongzhan",
+  "keywords": [
+    "ngfed",
+    "fc-components"
+  ],
   "files": [
     "dist",
     "lib",
@@ -27,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/tangyongzhan/ngfed/issues"
   },
-  "homepage": "https://github.com/tangyongzhan/ngfed",
+  "homepage": "https://github.com/tangyongzhan/ngfed/#readme",
   "peerDependencies": {
     "react": "^16.8 || ^17.0"
   },
