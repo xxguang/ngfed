@@ -1,6 +1,6 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Hooks for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -32,8 +32,6 @@
   },
   "dependencies": {
     "rc-util": "^5.9.8"
-  },
-  "devDependencies": {
   },
   "gitHead": "561ebf0c820fa5fd6f1a8e83d6a8de3474254921"
 }
