@@ -1,6 +1,6 @@
 {
-  "name": "@ngfed/test-fc-components",
-  "version": "1.0.8",
+  "name": "ngfed",
+  "version": "1.0.9",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -39,5 +39,5 @@
   "dependencies": {
     "rc-util": "^5.9.8"
   },
-  "gitHead": "18b760c4f3a6164b8b444eefd8a7e34ff46b17ee"
+  "gitHead": "1566d19269b034414e9c8f6321d18783e8b85baa"
 }
