@@ -1,0 +1,34 @@
+.gutter-box:nth-child(2n) {
+  padding: 8px 0;
+  background: #0092ff;
+}
+.gutter-box:nth-child(2n + 1) {
+  padding: 8px 0;
+  background: #00a0e9;
+}
+
+.height-100 {
+  height: 100px;
+}
+
+.height-50 {
+  height: 50px;
+}
+
+.height-80 {
+  height: 80px;
+}
+
+.height-120 {
+  height: 120px;
+}
+
+#grid-base03 .ant-row {
+  background: rgba(128, 128, 128, 0.08);
+  row-gap: 0;
+}
+
+#grid-base04 .ant-row {
+  background: rgba(128, 128, 128, 0.08);
+  row-gap: 0;
+}

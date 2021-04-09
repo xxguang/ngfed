@@ -1,17 +1,15 @@
 ---
 title: FcButton
-order: 1000
+order: 1
 nav:
-  title: Components
-  path: /component
+  order: 1
+  title: 基础组件库
+  path: /fc
 group:
-  title: 基础组件
-  path: /general
-  order: 3
+  path: /1.通用
 ---
 
-# FcButton - 按钮
-
+## FcButton 按钮
 
 按钮用于开始一个即时操作。
 
@@ -44,6 +42,64 @@ group:
 
 <code src="./demo/base01.tsx" />
 
+### 形状 shape
+
+> shape = 'circle' | 'round'
+
+<code src="./demo/base02.tsx" />
+
+### 大小 size
+
+> size = 'small' | 'large'
+
+<code src="./demo/base03.tsx" />
+
+### 状态 loading
+
+> loading = boolean | { delay: number }
+
+<code src="./demo/base04.tsx" />
+
+### 点击 onClick
+
+> onClick = (event) => void
+
+<code src="./demo/base05.tsx" />
+
+### 自定义样式
+
+> 设置 style 或 className 添加样式
+
+```css
+const buttonStyle = {
+      background: 'linear-gradient(45deg, gold, red)',
+      color: 'white',
+      borderWidth: '0px',
+      borderRadius: '10px'
+    }
+```
+
+<code src="./demo/base06.tsx" />
+
+### 块级 block
+
+<code src="./demo/base07.tsx" />
+
+### 危险 danger
+
+<code src="./demo/base08.tsx" />
+
+### 图标 icon
+
+<code src="./demo/base09.tsx" />
+
+### 链接按钮 target 和 href
+> href: 要跳转的链接， target: _blank | _self | _parent | _top
+<code src="./demo/base10.tsx" />
+
+### 幽灵按钮
+
+<code src="./demo/base11.tsx" />
 
 ## API
 

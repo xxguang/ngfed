@@ -4,17 +4,19 @@
  */
 
 import React from 'react';
-import { FcButton } from '@ngfed/fc-components';
+import { FcButton, FcSpace } from '@ngfed/fc-components';
 
 export default () => {
   return (
     <>
-      <FcButton type="default"> default button </FcButton>
-      <FcButton type="primary"> primary button</FcButton>
-      <FcButton type="ghost"> ghost button </FcButton>
-      <FcButton type="dashed"> dashed button</FcButton>
-      <FcButton type="link"> link button </FcButton>
-      <FcButton type="text"> text button </FcButton>
+      <FcSpace>
+        <FcButton type="default"> default button </FcButton>
+        <FcButton type="primary"> primary button</FcButton>
+        <FcButton type="ghost"> ghost button </FcButton>
+        <FcButton type="dashed"> dashed button</FcButton>
+        <FcButton type="link"> link button </FcButton>
+        <FcButton type="text"> text button </FcButton>
+      </FcSpace>
     </>
   );
 };
