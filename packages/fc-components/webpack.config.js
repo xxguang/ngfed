@@ -5,8 +5,8 @@ const path = require('path');
 module.exports = merge(common, {
   entry: './es/index.js',
   output: {
-    filename: 'ahooks-fc-components.js',
-    library: 'ahooksFcComponents',
+    filename: 'ngfed-fc-components.js',
+    library: 'ngfedFcComponents',
     path: path.resolve(__dirname, './dist'),
   },
 });

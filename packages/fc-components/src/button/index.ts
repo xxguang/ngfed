@@ -1,5 +1,2 @@
-function button(): void{
-    console.log('button index.ts')
-}
-
-export default button
+import FcButton from './fc-button';
+export default FcButton;
