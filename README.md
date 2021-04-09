@@ -1,3 +1,5 @@
+<!--
+
 English | [简体中文](https://github.com/alibaba/hooks/blob/master/README.zh-CN.md)
 
 # ahooks
@@ -96,3 +98,5 @@ We welcome all contributions, please read our [CONTRIBUTING.MD](https://github.c
 [2]: https://npmjs.org/package/ahooks
 [image-1]: https://img.shields.io/npm/v/ahooks.svg?style=flat
 [image-2]: https://img.shields.io/npm/dm/ahooks.svg?style=flat
+
+-->
