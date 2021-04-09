@@ -19,6 +19,7 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by [dumi](https://d.umijs.org)
 ---
 
+<!--
 ## 轻松上手
 
 ```bash
@@ -73,3 +74,4 @@ import { useRequest } from 'ahooks';
 ## 👥 反馈与共建
 
 <img src="https://raw.githubusercontent.com/alibaba/hooks/master/dingtalk.jpg" width="300" />
+-->

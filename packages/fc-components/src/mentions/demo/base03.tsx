@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { FcMentions, FcForm, FcButton } from '@ngfed/fc-components';
-const { Option, getMentions } = FcMentions;
+const { Option } = FcMentions;
 
 const App = () => {
   const [form] = FcForm.useForm();
@@ -23,14 +23,6 @@ const App = () => {
     }
   };
 
-  const checkMention = async (_, value) => {
-    const mentions = getMentions(value);
-
-    if (mentions.length < 2) {
-      throw new Error('More than one must be selected!');
-    }
-  };
-
   return (
     <FcForm form={form} layout="horizontal" onFinish={onFinish}>
       <FcForm.Item
@@ -38,7 +30,6 @@ const App = () => {
         label="Top coders"
         labelCol={{ span: 6 }}
         wrapperCol={{ span: 16 }}
-        rules={[{ validator: checkMention }]}
       >
         <FcMentions rows={1}>
           <Option value="afc163">afc163</Option>

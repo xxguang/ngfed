@@ -4,11 +4,8 @@ import omit from 'rc-util/lib/omit';
 
 function FcImage(props) {
   props = omit(props, ['alt', 'onError']);
-  return (
-    <>
-      <Image {...props} />
-    </>
-  );
+  return <Image {...props} />;
 }
+
 FcImage.PreviewGroup = Image.PreviewGroup;
 export default FcImage;

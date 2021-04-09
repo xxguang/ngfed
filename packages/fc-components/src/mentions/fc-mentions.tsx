@@ -9,6 +9,5 @@ function FcMentions(props) {
 }
 
 FcMentions.Option = Option;
-FcMentions.getMentions = getMentions;
 
 export default FcMentions;
