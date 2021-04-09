@@ -1,6 +1,6 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
