@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com:tangyongzhan/ngfed.git"
+    "url": "git+https://github.com/tangyongzhan/ngfed.git"
   },
   "scripts": {
     "build": "gulp && webpack-cli"
@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com:tangyongzhan/ngfed/issues"
+    "url": "https://github.com/tangyongzhan/ngfed/issues"
   },
-  "homepage": "https://github.com:tangyongzhan/ngfed",
+  "homepage": "https://github.com/tangyongzhan/ngfed",
   "peerDependencies": {
     "react": "^16.8 || ^17.0"
   },
