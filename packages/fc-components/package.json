@@ -1,11 +1,12 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": " for fetching, caching and updating asynchronous data",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
   "unpkg": "dist/ngfed-fc-components.js",
+  "author": "Yong zhan",
   "files": [
     "dist",
     "lib",
