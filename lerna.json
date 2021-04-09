@@ -2,7 +2,7 @@
   "packages": ["packages/*"],
   "command": {
     "version": {
-      "allowBranch": "main",
+      "allowBranch": "master",
       "includeMergedTags": true
     },
     "publish": {

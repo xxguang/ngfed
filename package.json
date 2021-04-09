@@ -5,6 +5,7 @@
     "type": "git",
     "url": "git+https://github.com/tangyongzhan/ngfed.git"
   },
+  "author": "Yong zhan",
   "scripts": {
     "init": "rm -rf node_modules && npm install && npm run clean && npm run bootstrap && npm run build",
     "start": "npm run dev",
