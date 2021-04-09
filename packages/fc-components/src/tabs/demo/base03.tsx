@@ -1,6 +1,6 @@
 /**
- * title:居中
- * desc: 标签居中展示。
+ * title: 居中
+ * desc: 标签居中展示
  */
 import React from 'react';
 import { FcTabs } from '@ngfed/fc-components';
