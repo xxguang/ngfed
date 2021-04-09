@@ -2,10 +2,10 @@
   "packages": ["packages/*"],
   "command": {
     "version": {
-      "allowBranch": "master",
-      "includeMergedTags": true
+      "allowBranch": "master"
     },
     "publish": {
+      "verifyAccess": false,
       "registry": "https://registry.npmjs.org/"
     }
   },
