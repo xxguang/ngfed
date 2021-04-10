@@ -2,12 +2,12 @@
 title: FcField
 order: 1
 nav:
-  order: 1
+  order: 2
   title: 业务组件库
   path: /fb
 group:
   title: 原子
-  path: utils
+  path: /utils
 ---
 
 ## FcField
