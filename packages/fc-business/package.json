@@ -1,15 +1,15 @@
 {
-  "name": "@ngfed/fc-components",
-  "version": "1.0.0",
-  "description": "ngfed fc-components",
+  "name": "@ngfed/fc-business",
+  "version": "0.0.1",
+  "description": "ngfed fc-business",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "unpkg": "dist/ngfed-fc-components.js",
+  "unpkg": "dist/ngfed-fc-business.js",
   "author": "ngfed",
   "keywords": [
     "ngfed",
-    "fc-components"
+    "fc-business"
   ],
   "files": [
     "dist",
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "build": "gulp && webpack-cli",
-    "test": "echo echo fc-components"
+    "test": "echo echo fc-business"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"

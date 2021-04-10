@@ -4,8 +4,8 @@ hero:
   title: 请切换到中文版面
   desc: 暂不支持英文文档
   actions:
-    - text: Getting Started
-      link: /docs/getting-started
+    - text: 点击进入
+      link: /zh-CN/fc/1.通用/button
 features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/813f5ed9-6bc4-43d4-9f74-ec81ecf35733/k7htg6n4_w144_h144.png
     title: Rich Collection

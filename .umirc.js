@@ -33,7 +33,7 @@ export default {
   links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   hash: true,
   resolve: {
-    includes: ['docs', 'packages/fc-components/src'],
+    includes: ['docs', 'packages/fc-components/src', 'packages/fc-business/src'],
   },
   links: [
     {
