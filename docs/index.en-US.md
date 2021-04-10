@@ -1,8 +1,8 @@
 ---
-title: ahooks - React Hooks Library
+title: NGFED - 前端金融组件库
 hero:
-  title: a hooks library
-  desc: Born for React Hooks
+  title: 请切换到中文版面
+  desc: 暂不支持英文文档
   actions:
     - text: Getting Started
       link: /docs/getting-started

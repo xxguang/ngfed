@@ -20,14 +20,12 @@ group:
 
 ## 代码演示
 
-### 基本 最简单的用法
-
-<code src="./demo/base02.tsx" />
-
-### 自定义样式 可以自定义回到顶部按钮的样式，限制宽高：`40px*40px`
-
+### 基本
 <code src="./demo/base01.tsx" />
 
+### 自定义样式
+
+<code src="./demo/base02.tsx" />
 
 ## API
 

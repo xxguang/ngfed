@@ -21,31 +21,33 @@ group:
 - 适合行内元素的水平间距。
 - 可以设置各种水平对齐方式。
 
-## 尺寸 size
+## 代码演示
+
+### 尺寸 size
 
 > size = Size | Size[] ----- Size = 'small' | 'middle' | 'large' | number
 
 <code src="./demo/base01.tsx" />
 
-## 方向 direction
+### 方向 direction
 
 > direction = 'vertical' | 'horizontal'
 
 <code src="./demo/base02.tsx" />
 
-## 对齐 align
+### 对齐 align
 
 > align = 'start' | 'end' | 'center' | 'baseline'
 
 <code src="./demo/base03.tsx" />
 
-## 分割 split
+### 分割 split
 
 > split = ReactNode
 
 <code src="./demo/base04.tsx" />
 
-## 换行 wrap
+### 换行 wrap
 
 > wrap = boolean
 

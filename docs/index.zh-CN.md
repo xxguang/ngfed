@@ -1,8 +1,8 @@
 ---
-title: ahooks - React Hooks Library
+title: NGFED - 前端金融组件库
 hero:
-  title: a hooks library
-  desc: 为 React Hooks 而生
+  title: 前端金融组件库
+  desc: 面向金融领域场景，加速构建安全，专业，标准的中后台应用
   actions:
     - text: 快速上手
       link: /zh-CN/docs/getting-started
