@@ -40,8 +40,7 @@ export default () => {
   return (
     <>
       <FcButton type="primary" onClick={openNotification}>
-        {' '}
-        open{' '}
+        open
       </FcButton>
     </>
   );
