@@ -1,0 +1,122 @@
+.fed() {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  &,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+  &:not([disabled]):hover {
+    text-decoration: none;
+  }
+  &:not([disabled]):active {
+    outline: 0;
+    box-shadow: none;
+  }
+  &[disabled] {
+    cursor: not-allowed;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+// default feedback style
+.fed-common() {
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80%;
+  }
+  &:before {
+    animation: wave-animate 0.5s infinite ease-out;
+  }
+
+  &:after {
+    opacity: 0;
+    animation: wave-animate 0.5s 0.2s infinite ease-out;
+  }
+}
+
+.fed-red() {
+  &:before,
+  &:after {
+    background-color: red;
+  }
+}
+
+.fed-green() {
+  &:before,
+  &:after {
+    background-color: green;
+  }
+}
+
+.fed-blue() {
+  &:before,
+  &:after {
+    background-color: blue;
+  }
+}
+
+.fed-black() {
+  &:before,
+  &:after {
+    background-color: black;
+  }
+}
+
+.fed-round() {
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 50%;
+    bottom: 0;
+    width: 40px;
+    height: 10px;
+    margin-left: -20px;
+  }
+}
+
+.fed-circle() {
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 50%;
+    bottom: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-left: -8px;
+  }
+}
+
+@keyframes wave-animate {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+    transform-origin: center;
+  }
+}
