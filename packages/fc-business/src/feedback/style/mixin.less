@@ -1,8 +1,11 @@
+@import (reference) '~antd/es/style/themes/default';
+
 .fed() {
   position: relative;
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
+
   &,
   &:active,
   &:focus {
@@ -54,14 +57,14 @@
 .fed-red() {
   &:before,
   &:after {
-    background-color: red;
+    background-color: @error-color;
   }
 }
 
 .fed-green() {
   &:before,
   &:after {
-    background-color: green;
+    background-color: @primary-color;
   }
 }
 

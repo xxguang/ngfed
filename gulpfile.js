@@ -52,9 +52,9 @@ gulp.task('copyReadme', async function () {
 });
 
 gulp.task('copyStyle', async function () {
-  await gulp.src('./src/style/*').pipe(gulp.dest('es/style/'));
-  await gulp.src('./src/style/*').pipe(gulp.dest('lib/style/'));
-  await gulp.src('./src/style/*').pipe(gulp.dest('dist/style/'));
+  // await gulp.src('./src/style/*').pipe(gulp.dest('es/style/'));
+  // await gulp.src('./src/style/*').pipe(gulp.dest('lib/style/'));
+  // await gulp.src('./src/style/*').pipe(gulp.dest('dist/style/'));
 });
 
 exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyStyle');

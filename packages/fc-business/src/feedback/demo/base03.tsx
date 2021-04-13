@@ -1,10 +1,9 @@
 import React from 'react';
-import { FcFeedback } from 'ngfed-fc-components';
-
+import { FbFeedback } from '@ngfed/fc-business';
 export default () => {
   return (
     <>
-      <FcFeedback
+      <FbFeedback
         color="red"
         shape="circle"
         onClick={() => {
@@ -12,7 +11,7 @@ export default () => {
         }}
       >
         <span>feedback </span>
-      </FcFeedback>
+      </FbFeedback>
     </>
   );
 };

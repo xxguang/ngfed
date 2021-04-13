@@ -1,24 +1,24 @@
 import React from 'react';
-import { FcFeedback } from 'ngfed-fc-components';
+import { FbFeedback } from '@ngfed/fc-business';
 
 export default () => {
   return (
     <>
-      <FcFeedback color="red">
+      <FbFeedback color="red">
         <span>feedback red </span>
-      </FcFeedback>
+      </FbFeedback>
 
-      <FcFeedback color="green">
+      <FbFeedback color="green">
         <span>feedback green </span>
-      </FcFeedback>
+      </FbFeedback>
 
-      <FcFeedback color="blue">
+      <FbFeedback color="blue">
         <span>feedback blue </span>
-      </FcFeedback>
+      </FbFeedback>
 
-      <FcFeedback color="black">
+      <FbFeedback color="black">
         <span>feedback black </span>
-      </FcFeedback>
+      </FbFeedback>
     </>
   );
 };
