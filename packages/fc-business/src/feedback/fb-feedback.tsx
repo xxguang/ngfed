@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import classNames from 'classnames';
 import omit from 'rc-util/lib/omit';
 import { Omit, tuple } from 'antd/es/_util/type';
 import devWarning from 'antd/es/_util/devWarning';
-import { ConfigContext } from 'antd/es/config-provider';
+import ConfigContext from '../provider';
 import SizeContext, { SizeType } from 'antd/es/config-provider/SizeContext';
 import TouchFeedback from 'rmc-feedback';
 
@@ -35,6 +35,8 @@ const InternalFeedback: React.ForwardRefRenderFunction<unknown, FeedBackProps> =
   const { prefixCls: customizePrefixCls, color, shape = 'round', className, ...rest } = props;
 
   // 获取context
+  const config = useContext(ConfigContext);
+  console.log(config);
 
   // 获取ref
   const feedBackRef = (ref as any) || React.createRef<HTMLElement>();

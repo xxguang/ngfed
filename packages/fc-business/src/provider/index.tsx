@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ConfigProvider as AntdConfigProvider, ConfigProvider } from 'antd';
+import { ConfigProvider as AntdConfigProvider } from 'antd';
 
 export type ConfigContextPropsType = {
   isMyContext: boolean;
