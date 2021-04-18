@@ -5,8 +5,8 @@ const path = require('path');
 module.exports = merge(common, {
   entry: './es/index.js',
   output: {
-    filename: 'ngfed-fc-business.js',
-    library: 'NgfedFcBusiness',
+    filename: 'ngfed-fb-business.js',
+    library: 'NgfedFbBusiness',
     path: path.resolve(__dirname, './dist'),
   },
 });

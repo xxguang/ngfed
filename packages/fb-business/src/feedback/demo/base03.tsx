@@ -1,5 +1,5 @@
 import React from 'react';
-import { FbFeedback } from '@ngfed/fc-business';
+import { FbFeedback } from '@ngfed/fb-business';
 export default () => {
   return (
     <>

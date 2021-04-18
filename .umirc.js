@@ -33,7 +33,7 @@ export default {
   links: [{ rel: 'manifest', href: '/asset-manifest.json' }],
   hash: true,
   resolve: {
-    includes: ['docs', 'packages/fc-components/src', 'packages/fc-business/src'],
+    includes: ['docs', 'packages/fc-components/src', 'packages/fb-business/src'],
   },
   links: [
     {
@@ -41,6 +41,10 @@ export default {
       href: 'https://unpkg.com/@alifd/theme-design-pro@0.6.2/dist/next-noreset.min.css',
     },
     { rel: 'stylesheet', href: '/style.css' },
+  ],
+  locales: [
+    ['zh-CN', '中文'],
+    ['en-US', 'English'],
   ],
   navs: {
     'zh-CN': [

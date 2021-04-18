@@ -1,6 +1,6 @@
 ---
-title: 业务组件开发
-order: 2
+title: 如何开发一个组件？
+order: 1
 nav:
   order: 3
   title: 指南
@@ -9,22 +9,23 @@ group:
   path: /开发教程
 ---
 
-# 业务组件开发教程
+# 如何开发一个组件？
 
-> 本文主要讲解如何开发一个全新的业务组件，以及提供一个`通用的范式`描述组件核心逻辑层的书写。开发者需预备：`React`, `antd`, `Typescript`, `git`知识
+> 本文主要讲解如何开发一个全新的组件，以及提供一个`通用的范式`描述组件核心逻辑层的书写。
+> 开发者需预备：`React`, `antd`, `Typescript`, `git`知识
 
-## 业务开发规范
+## 开发准备
 
-1. `fc-business`是业务组件库的根目录
-1. 所有组件代码存储在 src/组件名， 如： src/button
-1. 组件文件夹 采用`小写，横线`组合， 如： button, auto-complete
-1. 导出的组件统一采用大驼峰命名,并以`Fb`开头， 如： FbButton
-1. 全局公共配置统一放在外部 config-provider
+1. 在开发前请从项目负责人获取组件`API描述文档`和`组件原型设计`,并阅读右侧导航的`工作流`以及`开发教程`文档。
+1. 金融组件库共分为基础组件库 `fc-components` 和 业务组件库`fb-business`
+1. 各组件的代码存储在 src 目录平级展示 如： src/button, src/auto-complete
+1. 组件`文件夹和文件`采用`小写，横线`组合， 如： 文件夹 button, auto-complete 文件：index.tsx, fc-button.tsx
+1. 组件的导出统一采用大驼峰命名,`基础组件`以`Fc`开头, 如： FcButton，`业务组件`以`Fb`开头, 如： `FbFeedback`，
 1. 单个组件文件夹内部包含如下基础文件
 
 ```jsx | pure
   __test__           //测试文件
-  component          //组件依赖的文件
+  components         //组件依赖的子组件文件
   demo               //使用案例
   style              //样式，内部统一使用less,css
   index.tsx          //组件入口文件
@@ -32,133 +33,210 @@ group:
   ...                //其他组件专属的文件， 如果过多请创建文件夹存储
 ```
 
+> 下面以模拟在`业务组件库`文件夹 `fb-business`中， 开发一个`FbFeedback`组件为例作为讲解
+
 ## 开发步骤
 
-1. 克隆分支项目，安装 npm 依赖，运行项目
-2. 找到/src 目录， （也可复制 example 文件开始组件编写）
-3. 编写组件
-4. 在组件库的入口文件 src/index.tsx 中导出
-5. 书写使用 demo 案例
-6. 书写使用 api 文档
+> 开发一个组件大致细分为如下步骤， 后面是每一步具体的操作
+
+```
+0. 获取组件资料
+1. 安装运行项目
+2. 熟悉组件源码包
+3. 编写组件代码
+4. 在src中导出组件
+5. 书写demo案例
+6. 书写使用api文档
 7. 书写测试用例
-8. 开发完成提交代码分支
+8. 提交代码分支
+```
 
-> 介绍开发一个 Title 组件标准步骤
+### 0.获取组件资料
 
-### 1. 获取项目 dev 分支，安装 npm 依赖
+> 在进行组件开发之前，首先需要联系负责人获得开组件的 api 资料和设计稿件
+
+feedback 组件(api 设计文档)
+![api设计模版](./com_01.jpg)
+
+feedback 组件(原型或设计图稿)
+
+<img src="./com_02.jpg" width = "300" alt="图片名称" align=center />
+
+### 1.安装运行项目
+
+> 首先需在本地创建一个 git 工程，或直接克隆 dev 分支，然后安装运行。
 
 ```jsx | pure
+// 获取项目源码
 mkdir ngfed && cd ngfed
 git init
-git remote add origin  `仓库地址`
+git remote add origin  http://172.16.80.120/sdebank-ngfe/ngfed
 git checkout -b dev origin/dev
+
+// 安装依赖
+npm run init
+
+// 运行项目
+npm run start
 ```
 
-### 2. 进入/src 目录
+运行后切换如中文界面
+![运行后效果](./com_03.jpg)
 
-- 组件库源码目录，每个组件平级排列，文件夹名称统一采用`小写`和`横线`
-- `index.ts` 为所有组件的入口
-- `_util`文件夹为工具函数目录
+### 2.熟悉组件目录
 
-### 3. 编写组件代码（创建一个 Title 组件）案例
+> packages 文件是整个工程的源码目录 fc-components 是基础组件，fb-business 是业务组件 内部 src 是各个层级组件的源码。
 
-- 3.1 创建 `title` 目录
-- 3.2 创建 `index.tsx` 入口文件（单组件文件入口） 书写组件逻辑代码。
-- 3.3 `src/title/index.tsx` 是组件入口文件,只承担导入导出
+<img src="./com_04.jpg" width = "300" alt="图片名称" align=center />
+
+- 开发业务组件进入 `fb-business/src` , 基础组件进入 `fc-components/src`
+- 每个组件源码平级排列，文件夹名称统一采用`小写`和`横线`
+- `index.ts` 为所有组件的入口, 每个书写完毕的组件要在此导出供外部使用
+- `util`文件夹为工具函数目录
+- 在进行组件编码工作前，请大家仔细阅读`本文档`和右侧导航`工作流`中的`开发规范`
+
+### 3.编写组件逻辑
+
+> 下方 feedback 组件的最终所包含的文件，我们会依序创建完成书写。此处我们先预览组件的文件结构
+
+<img src="./com_05.jpg" width = "300" alt="图片名称" align=center />
+
+- 3.1 创建 `feedback` 目录
+- 3.2 创建 `src/feedback/index.tsx` 入口文件（单个组件文件入口） 书写组件逻辑代码。
+- 3.3 注意 `index.tsx` 是组件入口文件,只承担导入导出
 
 ```jsx | pure
-import FcTitle from './title'; //导入组件真正书写逻辑代码的文件。
-export default FcTitle; //导出的组件必须Fc开头，大驼峰命名
+// index.tsx 中的内容
+import FbFeedback from './fb-feedback'; //导入组件真正书写逻辑代码的文件
+export default FbFeedback; //导出的组件必须Fb开头，大驼峰命名
 ```
 
-- 3.4 组件文件名称采用`fc-组件名称`形式如： `src/title/fc-title.tsx`
+- 3.4 组件文件名称采用`fb-组件名称`形式如： `src/feedback/fb-feedback.tsx`,
 
 ```jsx | pure
-import * as React from 'react'
+// fb-feedback.js 组件代码结构， （完整代码在页尾查找）
+
+// 1.导入依赖
+import React, { useState } from 'react';
+
+// 2. 样式
 import './style/index.less';
 
-interface TitleProps {
-  title: string
+// 3. 泛型约束要实现的 api
+export interface FeedBackProps {
+  prefixCls?: string;
+  color?: FeedBackColor;
+  shape?: FeedBackShape;
+  className?: string;
+  children?: React.ReactNode;
+  onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-const = ({ title }: TitleProps) =>  {
-  return (
-    <>
-       <h1 className="fc-title">{title}</h1>
-    </>
-  )
+// 4. 组件核心逻辑实现
+const Feedback = React.forwardRef<unknown, FeedBackProps>(prop,ref){
+
+  // 省略核心逻辑书写...
+  // ....
 }
-export default Title
+
+// 5. 组件导出
+export default Feedback;
 ```
 
 - 3.5 创建`style`目录存放样式文件， 创建`index.less`书写样式，并在组件中引入
 
-```css | pure
-.fc-title {
-  font-size: 24;
+```less | pure
+@import './mixin';
+
+.ant-fb-feed {
+  // 组件样式代码省略， 完整请在教程尾部查看
 }
 ```
 
-### 4. 在`src/index.tsx`导出（所有组件的入口），如此方能在外部引用组件
+### 4.在 src 中导出组件
+
+> 当我们书写完一个组件后，必须在组件库的`src/index.tsx`导出组件，方能在外部，或书写 demo 时候进行引用
 
 ```jsx | pure
-export { default as Title } from './button';
+export { default as FbFeedback } from './feedback';
 ```
 
-### 5. 书写组件案例，在`title`组件目录中创建`demo`文件夹存放`base01.tsx`使用案例
+### 5.书写 demo 案例
+
+> 在`feedback`组件目录中创建`demo`文件夹存放`base01.tsx`使用案例, 请根据组件任务需求文件，完整书写所有案例
 
 ```jsx | pure
 import React from 'react';
-import { Title } from 'ngfed-fc-components';
+import { FbFeedback } from '@ngfed/fb-business';
 
 export default () => {
   return (
     <>
-      <Title title="example1 title" />
+      <FbFeedback color="red">
+        <span>feedback red </span>
+      </FbFeedback>
+
+      <FbFeedback color="green">
+        <span>feedback green </span>
+      </FbFeedback>
+
+      <FbFeedback color="blue">
+        <span>feedback blue </span>
+      </FbFeedback>
+
+      <FbFeedback color="black">
+        <span>feedback black </span>
+      </FbFeedback>
     </>
   );
 };
 ```
 
-### 6. 书写使用文档， 在`title`的`index.zh-CN.md`书写 api 文档，链接使用案例
+### 6.书写使用 api 文档
+
+> 在`feedback`的`index.zh-CN.md`书写 api 使用文档
+
+具体书写细节查阅 `开发规范`中的[API 使用文档规范](http://10.1.35.83:8001/zh-CN/workflow/%E5%B7%A5%E4%BD%9C%E6%B5%81/develop-rule#api-%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83)
+
+文档中案例的链接方式如下：
 
 ```html
 <code src="./demo/base01.tsx" /> //链接base01.案例
 ```
 
-### 7. 在**test**书创建`index.test.tsx`书写测试代码
+### 7.书写测试用例
+
+> 在**test**创建`index.test.tsx`书写测试代码
 
 ```jsx | pure
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import Title from '../index';
+import FbFeedback from '../index';
 
-test('Title test', () => {
-  const wrapper = render(<Title />);
-  const el = wrapper.queryByText('some title');
-  expect(el).toBeTruthy();
+test('FbFeedback test', () => {
+  // 编写测试代码逻辑...
 });
 ```
 
-### 8. 提交代码分支到远程仓库
+### 8. 提交代码
 
 ```jsx | pure
 git status
 git add .
-git commit -m '注释'
+git commit -m 'feat:完成feedback组件封装'
 git pull origin dev
-git push origin dev:dev
+git push origin dev:dev-yongzhan
 ```
 
 ## 核心逻辑层
 
-> 本段主要介绍如何写出一个标准规范的组件
+> 如何写出一个标准规范的组件，以`feedback`组件
 
-```
+```jsx | pure
 1. 标准的导入导出
-  1.1 组件入口文件统一导出Fc开头的组件名称，导入的文件名为小写 fc+组件名称，如fc-feedback.js
+  1.1 组件入口文件统一导出Fc开头的组件名称，导入的文件名为小写 fc+组件名称，如fb-feedback.js
   1.2 组件中使用 export default 导出默认组件
-  1.3 组件库使用 export { default as FcFeedback } from './feedback' 导出供外部，并放置在注释的模块区域。
+  1.3 组件库使用 export { default as FbFeedback } from './feedback' 导出供外部，并放置在注释的模块区域。
 2. 采用typescript语法，用接口约束参数和他的类型
   2.1 使用interface约束参数
   2.2 非基本类型的参数的类型定义，放在接口之前，可导入_util的type辅助生产想要的参数类型。
@@ -182,21 +260,28 @@ git push origin dev:dev
   6.5 mixin是该组件的样式混合。主要用于生成组件样式
 ```
 
-### feedback/index.ts 文件
+> 下方是 FbFeedback 组件完整代码代码。
+
+### feedback 组件入口 index.tsx
+
+> feedback/index.ts 文件
 
 ```jsx | pure
-import FcFeedback from './fc-feedback';
-export default FcFeedback;
+import FbFeedback from './fb-feedback';
+export default FbFeedback;
 ```
 
-### src/index.ts 文件
+### fb-business 项目入口 index.tsx
+
+> src/index.ts 文件, 该文件导出组件供 demo 和外部调用。
 
 ```jsx | pure
-// 实验模块
-export { default as FcFeedback } from './feedback';
+export { default as FbFeedback } from './feedback';
 ```
 
-### feedback/fc-feedback.js 文件
+### fb-feedback.js 核心逻辑
+
+> feedback/fb-feedback.js 文件， 该文件是组件的核心逻辑
 
 ```jsx | pure
 import React, { useState } from 'react';
@@ -237,7 +322,6 @@ export interface FeedBackProps {
   children?: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
-
 
 
 // 3. 优先采用 es6 函数式组件，采用hooks管理状态
@@ -320,14 +404,18 @@ Feedback.__NGFED_FEEDBACK = true;
 export default Feedback;
 ```
 
-### feedback/style/index.ts 文件
+### style 样式中的入口 index.ts
+
+> feedback/style/index.ts 文件
 
 ```jsx | pure
 import '../../style/index.less';
 import './index.less';
 ```
 
-### feedback/style/index.less 文件
+### style 样式中的 index.less
+
+> feedback/style/index.less 文件 ，样式的入口文件
 
 ```less
 // 导入主题和混合
@@ -372,7 +460,9 @@ import './index.less';
 }
 ```
 
-### feedback/style/mixin.less 文件
+### style 样式中的 mixin.less
+
+> feedback/style/mixin.less 文件, 该文件负责生成具体的样式。
 
 ```less
 // 基本样式
@@ -437,3 +527,7 @@ import './index.less';
 .fed-green() {
 }
 ```
+
+## 最终案例效果
+
+<code src="../../packages/fb-business/src/feedback/demo/base01.tsx" />

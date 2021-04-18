@@ -1,10 +1,8 @@
+@import (reference) '~antd/es/style/themes/default';
 @import './mixin';
 
-@fed-prefix-cls: ~'fb-fed';
-
-// Feedback styles
-// -----------------------------
-.@{fed-prefix-cls} {
+@fb-fed-prefix-cls: ~'@{ant-prefix}-fb-fed';
+.@{fb-fed-prefix-cls} {
   .fed();
   .fed-common();
   &-black {

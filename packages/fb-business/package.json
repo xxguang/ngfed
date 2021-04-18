@@ -1,15 +1,15 @@
 {
-  "name": "@ngfed/fc-business",
+  "name": "@ngfed/fb-business",
   "version": "0.0.1",
-  "description": "ngfed fc-business",
+  "description": "ngfed fb-business",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "unpkg": "dist/ngfed-fc-business.js",
+  "unpkg": "dist/ngfed-fb-business.js",
   "author": "ngfed",
   "keywords": [
     "ngfed",
-    "fc-business"
+    "fb-business"
   ],
   "files": [
     "dist",

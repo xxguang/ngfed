@@ -3,11 +3,14 @@ import classNames from 'classnames';
 import omit from 'rc-util/lib/omit';
 import { Omit, tuple } from 'antd/es/_util/type';
 import devWarning from 'antd/es/_util/devWarning';
-import ConfigContext from '../provider';
+
+import { ConfigProvider } from 'antd';
 import SizeContext, { SizeType } from 'antd/es/config-provider/SizeContext';
 import TouchFeedback from 'rmc-feedback';
 
 import './style/index';
+
+const ConfigContext = ConfigProvider.ConfigContext;
 interface CompoundedComponent
   extends React.ForwardRefExoticComponent<FeedBackProps & React.RefAttributes<HTMLElement>> {
   __NGFED_FEEDBACK: boolean;
@@ -36,7 +39,6 @@ const InternalFeedback: React.ForwardRefRenderFunction<unknown, FeedBackProps> =
 
   // 获取context
   const config = useContext(ConfigContext);
-  console.log(config);
 
   // 获取ref
   const feedBackRef = (ref as any) || React.createRef<HTMLElement>();
@@ -47,8 +49,8 @@ const InternalFeedback: React.ForwardRefRenderFunction<unknown, FeedBackProps> =
     (onClick as React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>)?.(e);
   };
 
-  const prefixCls = (customizePrefixCls || 'fb') + '-fed';
-
+  const { getPrefixCls, autoInsertSpaceInButton, direction } = React.useContext(ConfigContext);
+  const prefixCls = getPrefixCls('fb-fed', customizePrefixCls);
   const activeStyle = { color: color };
 
   const classes = classNames(
