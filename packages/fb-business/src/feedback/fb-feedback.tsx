@@ -8,7 +8,7 @@ import { ConfigProvider } from 'antd';
 import SizeContext, { SizeType } from 'antd/es/config-provider/SizeContext';
 import TouchFeedback from 'rmc-feedback';
 
-import './style/index';
+import './style/index.less';
 
 const ConfigContext = ConfigProvider.ConfigContext;
 interface CompoundedComponent

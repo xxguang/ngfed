@@ -51,9 +51,13 @@ gulp.task('copyReadme', async function () {
   //await gulp.src('../../README.md').pipe(gulp.dest('../../packages/hooks'));
 });
 
-gulp.task('copyStyle', async function () {
+gulp.task('copyFile', async function () {
   await gulp.src('./src/**/*.less').pipe(gulp.dest('es/'));
   await gulp.src('./src/**/*.less').pipe(gulp.dest('lib/'));
+  await gulp.src('./src/sheet/components/dist/**/*.*').pipe(gulp.dest('es/sheet/components/dist/'));
+  await gulp
+    .src('./src/sheet/components/dist/**/*.*')
+    .pipe(gulp.dest('lib/sheet/components/dist/'));
 });
 
-exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyStyle');
+exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyFile');

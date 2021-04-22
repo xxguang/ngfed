@@ -24,9 +24,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader', // creates style nodes from JS strings
-          },
+          // {
+          //   loader: 'style-loader', // creates style nodes from JS strings
+          // },
           {
             loader: 'css-loader', // translates CSS into CommonJS
           },
@@ -35,14 +35,14 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: (resourcePath, context) => {
-                return `${path.relative(path.dirname(resourcePath), context)}/`;
-              },
-            },
-          },
+          // {
+          //   loader: MiniCssExtractPlugin.loader,
+          //   options: {
+          //     publicPath: (resourcePath, context) => {
+          //       return `${path.relative(path.dirname(resourcePath), context)}/`;
+          //     },
+          //   },
+          // },
           {
             loader: 'css-loader', // translates CSS into CommonJS
           },
