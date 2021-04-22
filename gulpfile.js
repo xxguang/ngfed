@@ -1,6 +1,9 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
 const ts = require('gulp-typescript');
+const less = require('gulp-less');
+const concat = require('gulp-concat');
+const autoprefix = require('gulp-autoprefixer');
 const del = require('del');
 
 gulp.task('clean', async function () {
@@ -60,4 +63,30 @@ gulp.task('copyFile', async function () {
     .pipe(gulp.dest('lib/sheet/components/dist/'));
 });
 
-exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyFile');
+gulp.task('compileCss', async function () {
+  await gulp
+    .src('./src/**/*.less')
+    .pipe(less())
+    .pipe(concat('index.css'))
+    .pipe(
+      autoprefix({
+        browsers: ['last 2 versions'],
+        cascade: false,
+      }),
+    )
+    .pipe(gulp.dest('es/style'));
+
+  await gulp
+    .src('./src/**/*.less')
+    .pipe(less())
+    .pipe(concat('index.css'))
+    .pipe(
+      autoprefix({
+        browsers: ['last 2 versions'],
+        cascade: false,
+      }),
+    )
+    .pipe(gulp.dest('lib/style'));
+});
+
+exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyFile', 'compileCss');
