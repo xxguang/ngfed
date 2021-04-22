@@ -1,6 +1,6 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ngfed fc-components",
   "main": "./lib/index.js",
   "module": "./es/index.js",
