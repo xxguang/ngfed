@@ -1,6 +1,6 @@
 {
   "name": "@ngfed/fc-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "ngfed fc-components",
   "main": "./lib/index.js",
   "module": "./es/index.js",
@@ -40,4 +40,3 @@
     "rc-util": "^5.9.8"
   }
 }
-
